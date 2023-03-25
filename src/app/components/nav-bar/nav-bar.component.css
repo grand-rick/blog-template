@@ -61,6 +61,11 @@
     background-color: #fff;
     color: #000;
     cursor: pointer;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
   
 
