@@ -73,8 +73,9 @@
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    width: 100%;
-    overflow: auto;
+    color: #000;
+    /* width: 100%;
+    overflow: auto; */
     min-width: 16rem;
     box-shadow: 0rem .8rem 1.6rem 0rem rgba(0,0,0,0.2);
     padding: 1.2rem 1.6rem;
