@@ -39,13 +39,18 @@
 .nav-link-signup {
     background-color: #000;
     color: #fff;
-    border-radius: .5rem;
     padding: .5rem 1rem;
     margin-left: 1rem;
+    border-radius: .5rem;
     -webkit-border-radius: .5rem;
     -moz-border-radius: .5rem;
     -ms-border-radius: .5rem;
     -o-border-radius: .5rem;
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -ms-transition: .4s;
+    -o-transition: .4s;
 }
 
 .nav-link-signup:hover {
