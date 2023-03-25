@@ -15,11 +15,10 @@
 /* UTILITIES */
 .container {
     width: 100vw;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80rem;
+    max-width: 95%;
     margin: 0 auto;
     padding: 2rem;
 }
