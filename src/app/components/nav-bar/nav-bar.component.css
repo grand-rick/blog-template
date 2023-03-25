@@ -1,26 +1,60 @@
-nav {
-    background-color: #f7f7f7;
-    overflow: hidden;
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    font-size: 2rem;
 }
 
-nav ul {
-    list-style-type: none;
+.nav-logo img {
+    height: 4rem;
+    width: auto;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
     margin: 0;
     padding: 0;
 }
 
-nav li {
-    float: left;
+.nav-item {
+    margin: 0 10px;
 }
 
-nav li a {
-    display: block;
-    color: #000;
-    text-align: center;
-    padding: 1.4rem 1.6rem;
+.nav-link {
+    color: #fff;
     text-decoration: none;
 }
 
-nav li a:hover {
-    background-color: #555;
+.nav-auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
+.nav-link-signup {
+    background-color: #fff;
+    color: #333;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    margin-left: 1rem;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
+
+.nav-link-signup:hover {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+  
