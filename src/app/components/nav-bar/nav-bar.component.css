@@ -73,6 +73,11 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+    -ms-transition: .1s;
+    -o-transition: .1s;
 }
   
 .dropdown-content {
@@ -80,12 +85,17 @@
     position: absolute;
     background-color: #f9f9f9;
     color: #000;
-    /* width: 100%;
-    overflow: auto; */
+    width: 100%;
+    overflow: auto;
     min-width: 16rem;
     box-shadow: 0rem .8rem 1.6rem 0rem rgba(0,0,0,0.2);
     padding: 1.2rem 1.6rem;
     z-index: 1;
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+    -ms-transition: .1s;
+    -o-transition: .1s;
 }
   
 .dropdown:hover .dropdown-content {
