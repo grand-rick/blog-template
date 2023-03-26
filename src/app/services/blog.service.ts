@@ -16,12 +16,13 @@ export class BlogService {
 
   getCurrentBlog(id: string): Blog {
     let allBlogs: Blog[] = [];
+    let currentBlog: Blog = {id, title: '404', img: '404', description: '404', body: '404'};
 
     this.getBlogs().subscribe(data => {
       allBlogs = data;
+      currentBlog = allBlogs.find(blog => blog.id === id) || {id, title: '404', img: '404', description: '404', body: '404'};
     });
 
-    const currentBlog: Blog = allBlogs.find(blog => blog.id === id) || {id, title: '404', img: '404', description: '404', body: '404'};
     return currentBlog;
   }
 }
