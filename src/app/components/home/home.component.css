@@ -1,8 +1,6 @@
 .blog-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     padding: 2rem;
     gap: 1rem;
 }
