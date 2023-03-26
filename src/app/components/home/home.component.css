@@ -14,6 +14,15 @@
     flex-direction: column;
 }
 
+.blog-item:hover {
+    cursor: pointer;
+}
+
 img {
     width: 45rem;
+}
+
+.more {
+    padding-top: 1.5rem;
+    font-weight: bold;
 }
