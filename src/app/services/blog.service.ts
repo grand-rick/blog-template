@@ -13,16 +13,4 @@ export class BlogService {
   getBlogs(): Observable<Blog[]> {
     return this.http.get<Blog[]>('assets/data.json');
   }
-
-  getCurrentBlog(id: string): Blog {
-    let allBlogs: Blog[] = [];
-    let currentBlog: Blog = {id, title: '404', img: '404', description: '404', body: '404'};
-
-    this.getBlogs().subscribe(data => {
-      allBlogs = data;
-      currentBlog = allBlogs.find(blog => blog.id === id) || {id, title: '404', img: '404', description: '404', body: '404'};
-    });
-
-    return currentBlog;
-  }
 }

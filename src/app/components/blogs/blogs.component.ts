@@ -11,11 +11,15 @@ import { Blog } from 'src/app/models/Blog';
 
 export class BlogsComponent implements OnInit {
   id: string;
+  allBlogs: Blog[] = [];
   currentBlog: Blog;
 
   constructor(private route: ActivatedRoute, private blogService: BlogService) { 
     this.id = this.route.snapshot.paramMap.get('id') || '1';
-    this.currentBlog = this.blogService.getCurrentBlog(this.id);
+    this.blogService.getBlogs().subscribe(data => {
+      this.allBlogs = data;
+      this.currentBlog = this.allBlogs.find(blog => blog.id === this.id);
+    })
   }
 
   ngOnInit(): void {}
