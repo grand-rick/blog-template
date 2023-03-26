@@ -18,10 +18,10 @@ export class BlogsComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id') || '1';
     this.currentBlog = {
       id: this.id,
-      title: '404',
-      img: '404',
-      description: '404',
-      body: '404'
+      title: 'loading',
+      img: 'loading',
+      description: 'loading',
+      body: 'loading'
     }
     this.blogService.getBlogs().subscribe(data => {
       this.allBlogs = data;
