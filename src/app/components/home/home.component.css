@@ -1,0 +1,12 @@
+.blog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.blog-item {
+    margin: 1rem;
+    font-size: 1.5rem;
+}
