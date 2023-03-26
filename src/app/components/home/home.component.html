@@ -1,4 +1,9 @@
 <main class="container">
     <h1>This is the home component</h1>
-    <p>It's pretty awesome</p>
+    <div *ngFor="let blog of blogs">
+        <div>
+            <img src={{blog.img}} alt={{blog.title}} />
+            {{blog.title}}
+        </div>
+    </div>
 </main>
