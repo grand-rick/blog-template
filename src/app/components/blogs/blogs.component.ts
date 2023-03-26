@@ -16,9 +16,21 @@ export class BlogsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private blogService: BlogService) { 
     this.id = this.route.snapshot.paramMap.get('id') || '1';
+    this.currentBlog = {
+      id: this.id,
+      title: '404',
+      img: '404',
+      description: '404',
+      body: '404'
+    }
     this.blogService.getBlogs().subscribe(data => {
       this.allBlogs = data;
-      this.currentBlog = this.allBlogs.find(blog => blog.id === this.id);
+
+      this.allBlogs.forEach(blog => {
+        if (blog.id === this.id) {
+          this.currentBlog = blog;
+        }
+      })
     })
   }
 
