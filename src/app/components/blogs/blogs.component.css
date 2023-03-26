@@ -2,4 +2,9 @@
     display: grid;
     place-items: center;
     grid-template-columns: repeat(1, 1fr);
+    text-align: center;
+}
+
+.blog-body {
+    font-size: 2.5rem;
 }
