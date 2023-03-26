@@ -3,7 +3,7 @@
         <div *ngFor="let blog of blogs" class="blog-item">
             <img src={{blog.img}} alt={{blog.title}} />
             <h3>{{blog.title}}</h3>
-            <p>{{blog.description}}</p>
+            <p class="description">{{blog.description}}</p>
             <div class="more" routerLink="/more">
                 Read more 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">

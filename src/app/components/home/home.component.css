@@ -26,3 +26,9 @@ img {
     padding-top: 1.5rem;
     font-weight: bold;
 }
+
+.description {
+    width: 100%;
+    font-size: 1.8rem;
+    font-style: italic;
+}
