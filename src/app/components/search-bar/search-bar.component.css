@@ -1,5 +1,5 @@
 .search-bar {
     display: grid;
-    place-items: start;
+    place-items: center;
     font-size: 2rem;
 }
