@@ -14,6 +14,7 @@
 h2 {
     font-weight: bold;
     font-size: 3.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .sect {
@@ -23,8 +24,7 @@ h2 {
 .sect-1 {
     display: flex;
     flex-direction: column;
-    background-color: chocolate;
-    padding: .7rem;
+    padding: .5rem;
 }
 
 .sect-1-2 {
@@ -36,6 +36,7 @@ h2 {
 .sect-2 {
     font-weight: 200;
     font-size: 1.7rem;
-    background-color: yellowgreen;
-    padding: .7rem;
+    padding: .5rem;
+    display: flex;
+    align-items: flex-start;
 }
