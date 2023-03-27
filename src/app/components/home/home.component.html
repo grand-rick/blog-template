@@ -6,7 +6,7 @@
         </form>
     </div>
     <div class="blog-container">
-        <ng-container *ngIf="blogs; ngIfElse alternateContent">
+        <ng-container *ngIf="blogs;">
             <!-- content to render if expression is true -->
           </ng-container>
         <div *ngFor="let blog of blogs" class="blog-item">
@@ -22,7 +22,7 @@
                 </svg>
             </div>
         </div>
-        <div #alternateContent>
+        <div *ngIf="!blogs;">
             <h2 class="alternateContent">The item you are searching for seems to be unavailable.</h2>
         </div>
     </div>
