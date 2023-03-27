@@ -13,13 +13,13 @@ export class HomeComponent implements OnInit{
   hasSearched: boolean = false;
 
 
-  constructor (private blogService: BlogService) {}
-
-  ngOnInit(): void {
+  constructor (private blogService: BlogService) {
     this.blogService.getBlogs().subscribe(data => {
       this.blogs = data;
     })
   }
+
+  ngOnInit(): void {}
 
   search(): void {
     if (this.hasSearched) {
