@@ -10,12 +10,12 @@ import { Blog } from 'src/app/models/Blog';
 })
 
 export class BlogsComponent implements OnInit {
-  id: string;
+  title: string;
   allBlogs: Blog[] = [];
   currentBlog: Blog;
 
   constructor(private route: ActivatedRoute, private blogService: BlogService) { 
-    this.id = this.route.snapshot.paramMap.get('id') || '1';
+    this.title = this.route.snapshot.paramMap.get('title') || 'ux review presentations';
     this.currentBlog = {
       id: this.id,
       title: 'loading',
@@ -27,7 +27,7 @@ export class BlogsComponent implements OnInit {
       this.allBlogs = data;
 
       this.allBlogs.forEach(blog => {
-        if (blog.id === this.id) {
+        if (blog.title.toLowerCase() === this.title) {
           this.currentBlog = blog;
         }
       })
