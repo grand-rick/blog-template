@@ -33,9 +33,6 @@ export class HomeComponent implements OnInit{
     }
 
     this.blogs = this.blogs.filter(blog => {
-      if (this.query === ' ') {
-        return true;
-      }
       const blogTitle: string = blog.title.split(' ').join('').toLowerCase();
       this.hasSearched = true;
       return blogTitle.includes(this.query.toLowerCase());
