@@ -1,15 +1,20 @@
 .search-bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
     font-size: 2.8rem;
 }
 
 .search-bar > * {
-    margin: .5rem;
+    width: 100%;
 }
 
 h2 {
     font-weight: bold;
     font-size: 3.5rem;
+}
+
+.sect-2 {
+    font-weight: 200;
+    font-size: 2rem;
 }
