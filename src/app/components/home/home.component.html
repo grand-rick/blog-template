@@ -1,9 +1,6 @@
 <main class="container">
     <div class="search-bar">
-        <form (submit)="search()">
-            <input type="text" [(ngModel)]="query" placeholder="Search for blogs...">
-            <button type="submit">Search</button>
-        </form>
+        <app-search-bar (searchEvent)="onSearch($event)"></app-search-bar>
     </div>
     <div class="blog-container">
         <ng-container *ngIf="blogs;">
