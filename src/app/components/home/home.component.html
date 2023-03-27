@@ -1,4 +1,10 @@
 <main class="container">
+    <div class="search-bar">
+        <form (submit)="search()">
+            <input type="text" [(ngModel)]="query" placeholder="Search for blogs...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
     <div class="blog-container">
         <div *ngFor="let blog of blogs" class="blog-item">
             <a routerLink="/blogs/{{ (blog.title).split(' ').join('-').toLowerCase() }}"> 
