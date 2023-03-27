@@ -2,7 +2,9 @@ footer {
     display: grid;
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
-    font-size: 3rem;
+    font-size: 2rem;
     background-color: #000;
     color: #fff;
+    position: absolute;
+    bottom: 0;
 }
