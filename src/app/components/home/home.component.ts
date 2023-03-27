@@ -10,6 +10,7 @@ import { Blog } from 'src/app/models/Blog';
 export class HomeComponent implements OnInit{
   blogs: Blog[] = [];
   query: string = '';
+  hasSearched: boolean = false;
 
 
   constructor (private blogService: BlogService) {}
@@ -21,12 +22,19 @@ export class HomeComponent implements OnInit{
   }
 
   search(): void {
-    this.blogService.getBlogs().subscribe(data => {
-      this.blogs = data;
-    });
-    
+    if (this.hasSearched) {
+      this.blogService.getBlogs().subscribe(data => {
+        this.blogs = data;
+      });
+
+      this.hasSearched = false;
+
+      this.search();
+    }
+
     this.blogs = this.blogs.filter(blog => {
       const blogTitle: string = blog.title.split(' ').join('').toLowerCase();
+      this.hasSearched = true;
       return blogTitle.includes(this.query.toLowerCase());
     });
   }
