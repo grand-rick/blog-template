@@ -15,7 +15,7 @@ export class BlogsComponent implements OnInit {
   currentBlog: Blog;
 
   constructor(private route: ActivatedRoute, private blogService: BlogService) { 
-    this.title = this.route.snapshot.paramMap.get('title') || 'ux review presentations';
+    this.title = this.route.snapshot.paramMap.get('title') || 'ux-review-presentations';
     this.currentBlog = {
       id: '1',
       title: 'loading',
@@ -27,7 +27,8 @@ export class BlogsComponent implements OnInit {
       this.allBlogs = data;
 
       this.allBlogs.forEach(blog => {
-        if (blog.title.toLowerCase() === this.title) {
+        const blogTitle: string = blog.join('-').toLowerCase();
+        if (blogTitle === this.title) {
           this.currentBlog = blog;
         }
       })
