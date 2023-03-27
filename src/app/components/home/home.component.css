@@ -38,3 +38,9 @@ img {
     font-size: 1.4rem;
     font-style: italic;
 }
+
+.search-bar {
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
