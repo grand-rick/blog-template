@@ -17,7 +17,7 @@ export class BlogsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private blogService: BlogService) { 
     this.title = this.route.snapshot.paramMap.get('title') || 'ux review presentations';
     this.currentBlog = {
-      id: this.id,
+      id: '1',
       title: 'loading',
       img: 'loading',
       description: 'loading',
