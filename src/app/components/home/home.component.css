@@ -41,8 +41,8 @@ img {
 
 .alternateContent {
     color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
     font-size: 5rem;
+    margin: 0 auto;
 }
