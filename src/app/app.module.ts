@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavBarComponent,
-    BlogsComponent
+    BlogsComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
