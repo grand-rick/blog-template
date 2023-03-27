@@ -39,12 +39,6 @@ img {
     font-style: italic;
 }
 
-.search-bar {
-    display: grid;
-    place-items: center;
-    padding: 1rem;
-}
-
 .alternateContent {
     color: red;
 }
