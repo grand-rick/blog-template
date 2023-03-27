@@ -1,8 +1,8 @@
 .search-bar {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     font-size: 2.8rem;
-    width: 100%;
 }
 
 /* .search-bar > div {
@@ -19,7 +19,6 @@ h2 {
     flex-direction: column;
     background-color: chocolate;
     padding: .7rem;
-    margin-right: auto;
 }
 
 .sect-1-2 {
@@ -33,5 +32,4 @@ h2 {
     font-size: 1.7rem;
     background-color: yellowgreen;
     padding: .7rem;
-    margin-left: auto;
 }
