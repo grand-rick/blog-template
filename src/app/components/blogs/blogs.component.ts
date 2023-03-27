@@ -27,7 +27,7 @@ export class BlogsComponent implements OnInit {
       this.allBlogs = data;
 
       this.allBlogs.forEach(blog => {
-        const blogTitle: string = blog.title.join('-').toLowerCase();
+        const blogTitle: string = blog.title.replace(/\s+/g, '-').toLowerCase();
         if (blogTitle === this.title) {
           this.currentBlog = blog;
         }
