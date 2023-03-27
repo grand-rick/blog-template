@@ -25,11 +25,11 @@ export class HomeComponent implements OnInit{
     if (this.hasSearched) {
       this.blogService.getBlogs().subscribe(data => {
         this.blogs = data;
+
+        this.hasSearched = false;
+
+        this.search();
       });
-
-      this.hasSearched = false;
-
-      this.search();
     }
 
     this.blogs = this.blogs.filter(blog => {
