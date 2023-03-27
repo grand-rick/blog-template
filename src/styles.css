@@ -12,10 +12,6 @@
     box-sizing: border-box;
 }
 
-body {
-    position: relative;
-}
-
 /* UTILITIES */
 .container {
     width: 100vw;
