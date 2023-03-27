@@ -39,4 +39,6 @@ h2 {
     padding: .5rem;
     display: flex;
     align-items: flex-start;
+    color: #555;
+    font-style: italic;
 }
