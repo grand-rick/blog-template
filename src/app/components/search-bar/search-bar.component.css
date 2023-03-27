@@ -1,5 +1,10 @@
 .search-bar {
-    display: grid;
-    place-items: center;
-    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 2.8rem;
+}
+
+.search-bar > * {
+    margin: .5rem;
 }
