@@ -21,8 +21,6 @@ export class HomeComponent implements OnInit{
   }
 
   search(): void {
-    this.blogs = this.blogs.filter(blog => {
-      blog.title.includes(this.query);
-    })
+    this.blogs = this.blogs.filter(blog => blog.title.includes(this.query));
   }
 }
