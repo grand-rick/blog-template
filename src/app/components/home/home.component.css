@@ -44,3 +44,7 @@ img {
     place-items: center;
     padding: 1rem;
 }
+
+.alternateContent {
+    color: red;
+}
