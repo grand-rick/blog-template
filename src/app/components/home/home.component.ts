@@ -21,7 +21,10 @@ export class HomeComponent implements OnInit{
   }
 
   search(): void {
-    this.ngOnInit();
+    this.blogService.getBlogs().subscribe(data => {
+      this.blogs = data;
+    });
+    
     this.blogs = this.blogs.filter(blog => {
       const blogTitle: string = blog.title.split(' ').join('').toLowerCase();
       return blogTitle.includes(this.query.toLowerCase());
