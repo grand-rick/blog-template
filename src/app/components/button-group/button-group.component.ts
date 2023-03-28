@@ -20,8 +20,8 @@ export class ButtonGroupComponent {
     const activeButtonRect = activeButtonElement.getBoundingClientRect();
     const buttonGroupRect = activeButtonElement.parentElement?.getBoundingClientRect();
 
-    const translateX = activeButtonRect.left - buttonGroupRect.left;
-    const scaleX = activeButtonRect.width / buttonGroupRect.width;
+    // const translateX = activeButtonRect.left - buttonGroupRect.left;
+    // const scaleX = activeButtonRect.width / buttonGroupRect.width;
 
     return `translateX(${translateX}px) scaleX(${scaleX})`;
   }
