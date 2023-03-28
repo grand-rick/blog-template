@@ -5,26 +5,24 @@ import { Component } from '@angular/core';
   templateUrl: './button-group.component.html',
   styleUrls: ['./button-group.component.css']
 })
-
 export class ButtonGroupComponent {
-  lineTransform = 'translateX(0)';
+  activeButton: string = 'button1';
 
-  onButtonClick(event: MouseEvent) {
-    const button = event.target as HTMLElement;
-    const id = button.getAttribute('data-id');
+  getLineStyle(): string {
+    const buttonElements = document.querySelectorAll('.button');
+    const activeButtonIndex = Array.from(buttonElements).findIndex(button => button.classList.contains('active'));
 
-    switch (id) {
-      case 'button1':
-        this.lineTransform = 'translateX(0)';
-        break;
-      case 'button2':
-        this.lineTransform = 'translateX(33.3%)';
-        break;
-      case 'button3':
-        this.lineTransform = 'translateX(66.6%)';
-        break;
-      default:
-        break;
+    if (activeButtonIndex === -1) {
+      return 'translateX(-100%)';
     }
+
+    const activeButtonElement = buttonElements[activeButtonIndex];
+    const activeButtonRect = activeButtonElement.getBoundingClientRect();
+    const buttonGroupRect = activeButtonElement.parentElement?.getBoundingClientRect();
+
+    const translateX = activeButtonRect.left - buttonGroupRect.left;
+    const scaleX = activeButtonRect.width / buttonGroupRect.width;
+
+    return `translateX(${translateX}px) scaleX(${scaleX})`;
   }
 }
