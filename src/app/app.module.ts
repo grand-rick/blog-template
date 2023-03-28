@@ -11,6 +11,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ButtonGroupComponent } from './components/button-group/button-group.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FooterComponent } from './components/footer/footer.component';
     NavBarComponent,
     BlogsComponent,
     SearchBarComponent,
-    FooterComponent
+    FooterComponent,
+    ButtonGroupComponent
   ],
   imports: [
     BrowserModule,
