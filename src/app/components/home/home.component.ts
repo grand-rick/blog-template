@@ -21,16 +21,6 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {}
 
   onSearch(searchTerm: string) {
-    if (this.hasSearched) {
-      this.blogService.getBlogs().subscribe(data => {
-        this.blogs = data;
-
-        this.hasSearched = false;
-
-        this.onSearch(searchTerm);
-      });
-    }
-
     this.blogs = this.blogs.filter(blog => {
       const blogTitle: string = blog.title.split(' ').join('').toLowerCase();
       this.hasSearched = true;
