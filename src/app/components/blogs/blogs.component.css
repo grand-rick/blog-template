@@ -2,9 +2,31 @@
     display: grid;
     place-items: center;
     grid-template-columns: repeat(1, 1fr);
-    text-align: center;
+    text-align: left;
+}
+
+.blog > * {
+    margin-bottom: 2.3rem;
 }
 
 .blog-body {
     font-size: 2.5rem;
+    padding: .5rem;
+}
+
+.blog-body p {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 3.6rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+img {
+    height: 30%;
 }

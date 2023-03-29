@@ -13,6 +13,7 @@ export class BlogsComponent implements OnInit {
   title: string;
   allBlogs: Blog[] = [];
   currentBlog: Blog;
+  bodySections: string[] =[];
 
   constructor(private route: ActivatedRoute, private blogService: BlogService) { 
     this.title = this.route.snapshot.paramMap.get('title') || 'ux-review-presentations';
@@ -24,6 +25,8 @@ export class BlogsComponent implements OnInit {
       description: 'loading',
       body: 'loading'
     }
+
+
     this.blogService.getBlogs().subscribe(data => {
       this.allBlogs = data;
 
@@ -36,7 +39,9 @@ export class BlogsComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.bodySections = this.currentBlog.body.split('#');
+  }
 }
 
 

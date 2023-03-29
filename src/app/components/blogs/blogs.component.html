@@ -1,6 +1,9 @@
 <div class="container blog">
     <h1>{{currentBlog.title}}</h1>
     <h2>{{currentBlog.description}}</h2>
-    <img src={{currentBlog.img}} alt={{currentBlog.title}} width="80%"/>
-    <p class="blog-body">{{currentBlog.body}}</p>
+    <img src={{currentBlog.img}} alt={{currentBlog.title}}/>
+    <div class="blog-body">
+        <p>{{bodySections[0]}}</p>
+        <p>{{bodySections[1]}}</p>
+    </div>
 </div>
