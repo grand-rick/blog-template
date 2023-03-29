@@ -1,3 +1,3 @@
 <div class="button-group">
-    <button class="button" *ngFor="let category of allCategories; let i = index" (click)="selectCategory(category)">{{category}}</button>
+    <button class="button" *ngFor="let category of allCategories; let i = index" [class.selected]="buttonSelected" (click)="selectCategory(category)">{{category}}</button>
 </div>
