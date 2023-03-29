@@ -3,7 +3,7 @@
         <app-search-bar (searchEvent)="onSearch($event)"></app-search-bar>
     </div>
     <div class="app-button-group">
-        <app-button-group></app-button-group>
+        <app-button-group (category)="onCategorySelect($event)"></app-button-group>
     </div>
     <div class="blog-container">
         <ng-container *ngIf="blogs;">
