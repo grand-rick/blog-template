@@ -1,4 +1,4 @@
 <div class="button-group">
-    <button class="button" *ngFor="let category of allCategories">{{category}}</button>
+    <button class="button" *ngFor="let category of allCategories" (click)="selectCategory(category)">{{category}}</button>
     <div class="line"></div>
 </div>

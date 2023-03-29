@@ -44,4 +44,8 @@ export class ButtonGroupComponent {
     // return `translateX(${translateX}px) scaleX(${scaleX})`;
     return '404'
   }
+
+  selectCategory(category: string): void {
+    this.category.emit(category);
+  }
 }
