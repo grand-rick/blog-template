@@ -14,9 +14,11 @@
   background-color: transparent;
   color: #333;
   cursor: pointer;
-  position: relative;
-  border-radius: 5px;
-  transition: background-color 0.5s ease-out;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
 }
   
 .button:hover {
@@ -25,5 +27,5 @@
 
 .button.selected {
   color: #00f;
-  border-bottom: .3rem solid #00f;
+  border-bottom: .3rem solid #000;
 }
