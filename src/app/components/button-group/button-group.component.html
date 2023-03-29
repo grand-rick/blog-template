@@ -1,7 +1,4 @@
-<div class="button-group">
-    <button class="button" [class.active]="activeButton === 'button1'" (click)="activeButton = 'button1'">Button 1</button>
-    <button class="button" [class.active]="activeButton === 'button2'" (click)="activeButton = 'button2'">Button 2</button>
-    <button class="button" [class.active]="activeButton === 'button3'" (click)="activeButton = 'button3'">Button 3</button>
-    <div class="line" [ngStyle]="{ 'transform': getLineStyle() }"></div>
-  </div>
+<div class="button-group" *ngFor="let category of allCategories">
+    <button class="button">{{category}}</button>
+</div>
   
