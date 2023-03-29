@@ -26,15 +26,12 @@ export class ButtonGroupComponent {
     })
   }
 
-  onButtonClick() {
+  selectCategory(category: string): void {
+    this.category.emit(category);
     this.buttonSelected = true;
 
     setTimeout(() => {
       this.buttonSelected = false;
     }, 500);
-  }
-
-  selectCategory(category: string): void {
-    this.category.emit(category);
   }
 }
