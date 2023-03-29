@@ -10,7 +10,7 @@ import { Blog } from 'src/app/models/Blog';
 export class ButtonGroupComponent {
   allBlogs: Blog[] = [];
   allCategories: string[] = ['View All'];
-  buttonSelected = false;
+  buttonSelected: number = 0;
 
   @Output() category: EventEmitter<string> = new EventEmitter<string>();
 
@@ -26,12 +26,8 @@ export class ButtonGroupComponent {
     })
   }
 
-  selectCategory(category: string): void {
+  selectCategory(category: string, i: number): void {
+    this.buttonSelected = i;
     this.category.emit(category);
-    this.buttonSelected = true;
-
-    setTimeout(() => {
-      this.buttonSelected = false;
-    }, 500);
   }
 }

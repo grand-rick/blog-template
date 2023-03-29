@@ -26,17 +26,4 @@
 .button.selected {
   color: #00f;
   border-bottom: .3rem solid #00f;
-  animation: button-pulse 0.5s;
-}
-
-@keyframes button-pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
