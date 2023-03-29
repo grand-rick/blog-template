@@ -4,4 +4,6 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     font-size: 2rem;
     color: #000;
+    position: absolute;
+    bottom: 0;
 }
