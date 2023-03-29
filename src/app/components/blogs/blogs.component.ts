@@ -20,6 +20,7 @@ export class BlogsComponent implements OnInit {
       id: '1',
       title: 'loading',
       img: 'loading',
+      category: 'loading';
       description: 'loading',
       body: 'loading'
     }
