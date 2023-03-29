@@ -1,35 +1,27 @@
-.button-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    height: 50px;
-    margin: 20px;
-  }
   
-  .button {
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
-    background-color: transparent;
-    color: #333;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-  }
+.button {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  background-color: transparent;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
   
-  .button.active {
-    color: #000;
-  }
+.button.active {
+  color: #000;
+}
   
-  .line {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    background-color: #00f;
-    transition: transform 0.3s ease-in-out;
-    z-index: 0;
-  }
+.line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: #00f;
+  transition: transform 0.3s ease-in-out;
+  z-index: 0;
+}
   
