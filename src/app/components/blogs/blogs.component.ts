@@ -13,7 +13,7 @@ export class BlogsComponent implements OnInit {
   title: string;
   allBlogs: Blog[] = [];
   currentBlog: Blog;
-  bodySections: string[] =[];
+  bodySections: string[] = [];
 
   constructor(private route: ActivatedRoute, private blogService: BlogService) { 
     this.title = this.route.snapshot.paramMap.get('title') || 'ux-review-presentations';
@@ -34,14 +34,13 @@ export class BlogsComponent implements OnInit {
         const blogTitle: string = blog.title.split(' ').join('-').toLowerCase();
         if (blogTitle === this.title) {
           this.currentBlog = blog;
+          this.bodySections = this.currentBlog.body.split('#');
         }
       })
     })
   }
 
-  ngOnInit(): void {
-    this.bodySections = this.currentBlog.body.split('#');
-  }
+  ngOnInit(): void {}
 }
 
 
