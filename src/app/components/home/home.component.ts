@@ -44,7 +44,10 @@ export class HomeComponent implements OnInit{
     this.blogService.getBlogs().subscribe(data => {
       blogs = data;
 
-      if (category === 'View All') return;
+      if (category === 'View All') {
+        this.blogs = blogs;
+        return
+      };
 
       this.blogs = blogs.filter(blog => blog.category === category);
     });
