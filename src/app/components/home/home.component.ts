@@ -36,5 +36,16 @@ export class HomeComponent implements OnInit{
       this.hasSearched = true;
       return blogTitle.includes(searchTerm.toLowerCase());
     });
-  }  
+  } 
+
+  onCategorySelect(category: string): void {
+    if (category === 'View All') {
+      this.blogService.getBlogs().subscribe(data => {
+        this.blogs = data;
+        return;
+      });
+    }
+
+    this.blogs = this.blogs.filter(blog => blog.category === category);
+  }
 }

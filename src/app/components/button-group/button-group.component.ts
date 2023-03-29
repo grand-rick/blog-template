@@ -10,7 +10,7 @@ import { Blog } from 'src/app/models/Blog';
 export class ButtonGroupComponent {
   activeButton: string = 'button1';
   allBlogs: Blog[] = [];
-  allCategories: string[] = [];
+  allCategories: string[] = ['View All'];
 
   @Output() category: EventEmitter<string> = new EventEmitter<string>();
 
