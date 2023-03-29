@@ -39,13 +39,14 @@ export class HomeComponent implements OnInit{
   } 
 
   onCategorySelect(category: string): void {
-    if (category === 'View All') {
-      this.blogService.getBlogs().subscribe(data => {
-        this.blogs = data;
-        return;
-      });
-    }
+    let blogs: Blog[] = [];
 
-    this.blogs = this.blogs.filter(blog => blog.category === category);
+    this.blogService.getBlogs().subscribe(data => {
+      blogs = data;
+
+      if (category === 'View All') return;
+
+      this.blogs = blogs.filter(blog => blog.category === category);
+    });
   }
 }
