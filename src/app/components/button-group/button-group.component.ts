@@ -8,9 +8,9 @@ import { Blog } from 'src/app/models/Blog';
   styleUrls: ['./button-group.component.css']
 })
 export class ButtonGroupComponent {
-  activeButton: string = 'button1';
   allBlogs: Blog[] = [];
   allCategories: string[] = ['View All'];
+  buttonSelected = false;
 
   @Output() category: EventEmitter<string> = new EventEmitter<string>();
 
@@ -26,23 +26,12 @@ export class ButtonGroupComponent {
     })
   }
 
-  getLineStyle(): string {
-    // const buttonElements = document.querySelectorAll('.button');
-    // const activeButtonIndex = Array.from(buttonElements).findIndex(button => button.classList.contains('active'));
+  onButtonClick() {
+    this.buttonSelected = true;
 
-    // if (activeButtonIndex === -1) {
-    //   return 'translateX(-100%)';
-    // }
-
-    // const activeButtonElement = buttonElements[activeButtonIndex];
-    // const activeButtonRect = activeButtonElement.getBoundingClientRect();
-    // const buttonGroupRect = activeButtonElement.parentElement?.getBoundingClientRect();
-
-    // const translateX = activeButtonRect.left - buttonGroupRect.left;
-    // const scaleX = activeButtonRect.width / buttonGroupRect.width;
-
-    // return `translateX(${translateX}px) scaleX(${scaleX})`;
-    return '404'
+    setTimeout(() => {
+      this.buttonSelected = false;
+    }, 500);
   }
 
   selectCategory(category: string): void {

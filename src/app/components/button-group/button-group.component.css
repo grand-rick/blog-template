@@ -15,24 +15,27 @@
   color: #333;
   cursor: pointer;
   position: relative;
-  z-index: 1;
+  border-radius: 5px;
+  transition: background-color 0.5s ease-out;
 }
   
 .button:hover {
-  color: #00f;
+  color: rgb(89, 68, 200);
 }
 
-.button.active {
-  color: #000;
+.button.selected {
+  /* color: #00f; */
+  animation: button-pulse 0.5s;
 }
-  
-.line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3px;
-  background-color: #00f;
-  transition: transform 0.3s ease-in-out;
-  z-index: 0;
+
+@keyframes button-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
-  
