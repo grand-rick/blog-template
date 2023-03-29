@@ -41,10 +41,10 @@ img {
 
 .alternateContent {
     color: red;
-    display: grid;
-    place-items: center;
-    font-size: 5rem;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
 }
 
 .app-button-group {
