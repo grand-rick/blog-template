@@ -10,6 +10,8 @@ import { Blog } from 'src/app/models/Blog';
 export class HomeComponent implements OnInit{
   blogs: Blog[] = [];
   hasSearched: boolean = false;
+  selectedCategory: string = '';
+  allCategoryKey: string = 'View All';
 
 
   constructor (private blogService: BlogService) {
@@ -21,6 +23,16 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {}
 
   onSearch(searchTerm: string) {
+    if (this.hasSearched && this.selectedCategory !== this.allCategoryKey) {
+      this.blogService.getBlogs().subscribe(data => {
+        this.blogs = data.filter(blog => blog.category === this.selectedCategory);
+
+        this.hasSearched = false;
+
+        this.onSearch(searchTerm);
+      });
+    }
+
     this.blogs = this.blogs.filter(blog => {
       const blogTitle: string = blog.title.split(' ').join('').toLowerCase();
       this.hasSearched = true;
@@ -34,11 +46,13 @@ export class HomeComponent implements OnInit{
     this.blogService.getBlogs().subscribe(data => {
       blogs = data;
 
-      if (category === 'View All') {
+      if (category === this.allCategoryKey) {
+        this.selectedCategory = this.allCategoryKey;
         this.blogs = blogs;
         return
       };
 
+      this.selectedCategory = category;
       this.blogs = blogs.filter(blog => blog.category === category);
     });
   }
