@@ -22,7 +22,8 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {}
 
   onSearch(searchTerm: string): void {
-    let filteredBlogs = this.blogs;
+    this.blogService.getBlogs().subscribe(data => {
+    let filteredBlogs = data;
 
     if (searchTerm && this.selectedCategory !== this.allCategoryKey) {
       filteredBlogs = filteredBlogs.filter(blog => blog.category === this.selectedCategory);
@@ -34,6 +35,8 @@ export class HomeComponent implements OnInit{
     }
 
     this.blogs = filteredBlogs;
+    });
+    
   }
 
   onCategorySelect(category: string): void {
