@@ -25,6 +25,10 @@ export class HomeComponent implements OnInit{
   onSearch(searchTerm: string): void {
     if (searchTerm === '') {
       this.blogService.getBlogs().subscribe(data => {
+        if (this.selectedCategory === this.allCategoryKey) {
+          this.blogs = data;
+          return
+        }
         this.blogs = data.filter(blog => blog.category === this.selectedCategory);
         return;
       });
