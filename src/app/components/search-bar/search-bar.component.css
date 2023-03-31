@@ -50,7 +50,7 @@ h2 {
 }
   
 .sect-1-2 * {
-    margin-right: 15px;
+    margin-right: 10px;
 }
   
 .sect-1-2 button {
@@ -68,4 +68,7 @@ h2 {
     border-bottom: 2px solid black;
     color: #000;
     font-size: 15px;
+    padding: 3px;
+    outline: none;
+    font-weight: bold;
 }
