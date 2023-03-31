@@ -13,60 +13,40 @@ export class HomeComponent implements OnInit{
   selectedCategory: string = '';
   allCategoryKey: string = 'View All';
 
-
   constructor (private blogService: BlogService) {
     this.blogService.getBlogs().subscribe(data => {
       this.blogs = data;
-    })
+    });
   }
 
   ngOnInit(): void {}
 
   onSearch(searchTerm: string): void {
-    if (searchTerm === '') {
-      this.blogService.getBlogs().subscribe(data => {
-        if (this.selectedCategory === this.allCategoryKey) {
-          this.blogs = data;
-          return
-        }
-        this.blogs = data.filter(blog => blog.category === this.selectedCategory);
-        return;
-      });
-    } else {
-      if (this.hasSearched && this.selectedCategory !== this.allCategoryKey) {
-        this.blogService.getBlogs().subscribe(data => {
-          this.blogs = data.filter(blog => blog.category === this.selectedCategory);
-  
-          this.hasSearched = false;
-  
-          this.onSearch(searchTerm);
-        });
-      }
-  
-      this.blogs = this.blogs.filter(blog => {
-        const blogTitle: string = blog.title.split(' ').join('').toLowerCase();
-        this.hasSearched = true;
-        return blogTitle.includes(searchTerm.toLowerCase());
-      });
+    let filteredBlogs = this.blogs;
+
+    if (searchTerm && this.selectedCategory !== this.allCategoryKey) {
+      filteredBlogs = filteredBlogs.filter(blog => blog.category === this.selectedCategory);
     }
 
-    
-  } 
+    if (searchTerm) {
+      const blogTitle: string = searchTerm.toLowerCase().split(' ').join('');
+      filteredBlogs = filteredBlogs.filter(blog => blog.title.toLowerCase().includes(blogTitle));
+    }
+
+    this.blogs = filteredBlogs;
+  }
 
   onCategorySelect(category: string): void {
-    let blogs: Blog[] = [];
-
     this.blogService.getBlogs().subscribe(data => {
-      blogs = data;
+      let blogs: Blog[] = data;
 
       if (category === this.allCategoryKey) {
         this.selectedCategory = this.allCategoryKey;
         this.blogs = blogs;
-        return
-      };
-
-      this.selectedCategory = category;
-      this.blogs = blogs.filter(blog => blog.category === category);
+      } else {
+        this.selectedCategory = category;
+        this.blogs = blogs.filter(blog => blog.category === category);
+      }
     });
   }
 }
