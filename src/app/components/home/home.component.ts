@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit{
 
   onSearch(searchTerm: string): void {
     this.blogService.getBlogs().subscribe(data => {
-    let filteredBlogs = data;
+    let filteredBlogs: Blog[] = data;
 
     if (searchTerm && this.selectedCategory !== this.allCategoryKey) {
       filteredBlogs = filteredBlogs.filter(blog => blog.category === this.selectedCategory);
