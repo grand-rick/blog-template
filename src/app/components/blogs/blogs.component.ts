@@ -10,13 +10,15 @@ import { Blog } from 'src/app/models/Blog';
 })
 
 export class BlogsComponent implements OnInit {
-  title: string;
+  title: string = '';
   allBlogs: Blog[] = [];
   currentBlog: Blog;
   bodySections: string[] = [];
 
   constructor(private route: ActivatedRoute, private blogService: BlogService) { 
-    this.title = this.route.snapshot.paramMap.get('title');
+    this.route.params.subscribe(params => {
+      this.title = params['title'] || 'ux-review-presentations'; // use default value of ux-review-presentations if title is not provided
+    });
     
     this.currentBlog = {
       id: '1',
@@ -30,10 +32,6 @@ export class BlogsComponent implements OnInit {
 
     this.blogService.getBlogs().subscribe(data => {
       this.allBlogs = data;
-
-      this.route.params.subscribe(params => {
-        this.title = params['title'] || 'ux-review-presentations'; // use default value of ux-review-presentations if title is not provided
-      });
 
       this.allBlogs.forEach(blog => {
         const blogTitle: string = blog.title.split(' ').join('-').toLowerCase();
