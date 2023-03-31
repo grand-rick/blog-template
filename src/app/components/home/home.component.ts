@@ -22,6 +22,9 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {}
 
   onSearch(searchTerm: string): void {
+    /* Removing white space from the search term. */
+    searchTerm = searchTerm.split(' ').filter(Boolean).join('');
+
     this.blogService.getBlogs().subscribe(data => {
       let filteredBlogs: Blog[] = data;
 
