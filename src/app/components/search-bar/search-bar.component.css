@@ -42,3 +42,30 @@ h2 {
     color: #555;
     font-style: italic;
 }
+
+.sect-1-2 {
+    display: flex;
+    justify-content: start;
+    padding: 4px;
+}
+  
+.sect-1-2 * {
+    margin-right: 15px;
+}
+  
+.sect-1-2 button {
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #000;
+    color: #f7f7f7;
+    font-size: 15px;
+    font-weight: bold;
+}
+  
+.sect-1-2 input {
+    border: none;
+    border-bottom: 2px solid black;
+    color: #000;
+    font-size: 15px;
+}
