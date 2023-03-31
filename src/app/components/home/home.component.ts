@@ -23,20 +23,19 @@ export class HomeComponent implements OnInit{
 
   onSearch(searchTerm: string): void {
     this.blogService.getBlogs().subscribe(data => {
-    let filteredBlogs: Blog[] = data;
+      let filteredBlogs: Blog[] = data;
 
-    if (searchTerm && this.selectedCategory !== this.allCategoryKey) {
-      filteredBlogs = filteredBlogs.filter(blog => blog.category === this.selectedCategory);
-    }
+      if (searchTerm && this.selectedCategory !== this.allCategoryKey) {
+        filteredBlogs = filteredBlogs.filter(blog => blog.category === this.selectedCategory);
+      }
 
-    if (searchTerm) {
-      const blogTitle: string = searchTerm.toLowerCase().split(' ').join('');
-      filteredBlogs = filteredBlogs.filter(blog => blog.title.toLowerCase().includes(blogTitle));
-    }
+      if (searchTerm) {
+        const blogTitle: string = searchTerm.toLowerCase().split(' ').join('');
+        filteredBlogs = filteredBlogs.filter(blog => blog.title.toLowerCase().includes(blogTitle));
+      }
 
-    this.blogs = filteredBlogs;
-    });
-    
+      this.blogs = filteredBlogs;
+      });
   }
 
   onCategorySelect(category: string): void {

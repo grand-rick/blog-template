@@ -5,7 +5,8 @@ import { BlogsComponent } from 'src/app/components/blogs/blogs.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'blogs/:title', component: BlogsComponent }
+  { path: 'blogs/:title', component: BlogsComponent },
+  { path: 'blogs', redirectTo: 'blogs/ux-review-presentations', pathMatch: 'full' }, // default value for title parameter is ux-review-presentations
 ];
 
 @NgModule({
