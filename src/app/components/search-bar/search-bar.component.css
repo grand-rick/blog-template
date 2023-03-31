@@ -61,6 +61,7 @@ h2 {
     color: #f7f7f7;
     font-size: 15px;
     font-weight: bold;
+    cursor: pointer;
 }
   
 .sect-1-2 input {
