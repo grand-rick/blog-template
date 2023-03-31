@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit{
     this.blogService.getBlogs().subscribe(data => {
       let filteredBlogs: Blog[] = data;
 
-      if (searchTerm && this.selectedCategory !== this.allCategoryKey) {
+      if (this.selectedCategory !== this.allCategoryKey) {
         filteredBlogs = filteredBlogs.filter(blog => blog.category === this.selectedCategory);
       }
 
