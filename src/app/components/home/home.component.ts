@@ -22,20 +22,25 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {}
 
   onSearch(searchTerm: string): void {
-    this.blogService.getBlogs().subscribe(data => {
-      let filteredBlogs: Blog[] = data;
+    this.onCategorySelect(this.selectedCategory);
 
-      if (searchTerm && this.selectedCategory !== this.allCategoryKey) {
-        filteredBlogs = filteredBlogs.filter(blog => blog.category === this.selectedCategory);
-      }
+    let filteredBlogs: Blog[] = this.blogs;
 
-      if (searchTerm) {
-        const blogTitle: string = searchTerm.toLowerCase().split(' ').join('');
-        filteredBlogs = filteredBlogs.filter(blog => blog.title.toLowerCase().includes(blogTitle));
-      }
 
-      this.blogs = filteredBlogs;
-      });
+    if (searchTerm && this.selectedCategory !== this.allCategoryKey) {
+      filteredBlogs = filteredBlogs.filter(blog => blog.category === this.selectedCategory);
+    }
+
+    if (searchTerm) {
+      const blogTitle: string = searchTerm.toLowerCase().split(' ').join('');
+      filteredBlogs = filteredBlogs.filter(blog => blog.title.toLowerCase().includes(blogTitle));
+    }
+
+    this.blogs = filteredBlogs;
+
+    // this.blogService.getBlogs().subscribe(data => {
+      
+    //   });
   }
 
   onCategorySelect(category: string): void {
