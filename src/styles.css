@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
 :root {
     font-size: 62.5%;
     --light-color: #d4e0ff;
@@ -14,10 +18,10 @@
 
 body {
     position: relative;
-}
+} */
 
 /* UTILITIES */
-.container {
+/* .container {
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -29,6 +33,5 @@ body {
 }
   
 .container > * {
-    width: 100%;
-}
+    width: 100%; */
 /* END OF UTILITIES */
