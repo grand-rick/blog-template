@@ -1,48 +1,44 @@
-<nav class="nav-bar">
-    <div class="nav-logo">
-        <img src="https://cdn.pixabay.com/photo/2016/01/27/05/45/art-1163780_960_720.png" alt="Logo">
-    </div>
-    <ul class="nav-list">
-        <li class="nav-item">
-        <a class="nav-link" routerLink="/">Home</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link dropdown" routerLink="/">Products
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                  </svg>
+<nav class="relative container mx-auto p-6">
+    <div class="flex items-center justify-between">
+        <div class="w-auto h-10 bg-transparent">
+            <img src="https://cdn.pixabay.com/photo/2016/01/27/05/45/art-1163780_960_720.png" class="cursor-pointer w-8" alt="Logo">
+        </div>
+        <ul class="hidden md:flex items-center justify-center mr-auto list-none">
+            <li class="mx-2.5">
+                <a class="no-underline text-black py-3" routerLink="/">Home</a>
+            </li>
+            <li class="mx-2.5">
+                <a class="no-underline text-black py-3 dropdown" routerLink="/">Products
+                    <ul class="flex items-center justify-center mr-auto list-none dropdown-content">
+                        <li class="mx-2.5"><a routerLink="/" class="no-underline text-black py-3">Accessories</a></li>
+                        <li class="mx-2.5"><a routerLink="/" class="no-underline text-black py-3">Shoes</a></li>
+                        <li class="mx-2.5"><a routerLink="/" class="no-underline text-black py-3">Dresses</a></li>
+                        <li class="mx-2.5"><a routerLink="/" class="no-underline text-black py-3">Coats</a></li>
+                    </ul>
+                </a>
+            </li>
+            <li class="mx-2.5">
+            <a class="no-underline text-black py-3 dropdown" routerLink="/">Resources
                 <ul class="nav-list dropdown-content">
-                    <li class="nav-item"><a routerLink="/" class="nav-link">Accessories</a></li>
-                    <li class="nav-item"><a routerLink="/" class="nav-link">Shoes</a></li>
-                    <li class="nav-item"><a routerLink="/" class="nav-link">Dresses</a></li>
-                    <li class="nav-item"><a routerLink="/" class="nav-link">Coats</a></li>
+                    <li class="mx-2.5"><a routerLink="/" class="no-underline text-black py-3">Resource 1</a></li>
+                    <li class="mx-2.5"><a routerLink="/" class="no-underline text-black py-3">Resource 2</a></li>
+                    <li class="mx-2.5"><a routerLink="/" class="no-underline text-black py-3">Resource 3</a></li>
+                    <li class="mx-2.5"><a routerLink="/" class="no-underline text-black py-3">Resource 4</a></li>
                 </ul>
             </a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link dropdown" routerLink="/">Resources
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-              </svg>
-            <ul class="nav-list dropdown-content">
-                <li class="nav-item"><a routerLink="/" class="nav-link">Resource 1</a></li>
-                <li class="nav-item"><a routerLink="/" class="nav-link">Resource 2</a></li>
-                <li class="nav-item"><a routerLink="/" class="nav-link">Resource 3</a></li>
-                <li class="nav-item"><a routerLink="/" class="nav-link">Resource 4</a></li>
-            </ul>
-        </a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" routerLink="/">Pricing</a>
-        </li>
-    </ul>
-    <ul class="nav-auth">
-        <li class="nav-item">
-        <a class="nav-link" routerLink="/">Log in</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link nav-link-signup" routerLink="/">Sign up</a>
-        </li>
-    </ul>
+            </li>
+            <li class="mx-2.5">
+                <a class="no-underline text-black py-3" routerLink="/">Pricing</a>
+            </li>
+        </ul>
+        <ul class="flex flex-col space-y-5 items-center justify-center list-none md:flex-row md:space-y-0">
+            <li class="mx-2.5">
+                <a class="no-underline text-black py-3" routerLink="/">Log in</a>
+            </li>
+            <li class="mx-2.5">
+                <a class="rounded-full bg-black text-white transition duration-300 no-underline text-black py-3 no-underline text-black text-2md px-5 py-3 ml-2.5 cursor-pointer border-none hover:bg-white hover:text-black hover:border-2" routerLink="/">Sign up</a>
+            </li>
+        </ul>
+    </div>
 </nav>
   

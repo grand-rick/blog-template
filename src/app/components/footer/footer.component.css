@@ -1,7 +1,0 @@
-footer {
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    font-size: 2rem;
-    color: #000;
-}
