@@ -9,7 +9,7 @@
         <div class="flex flex-col items-center justify-center p-5 mx-auto md:grid md:grid-cols-2 md:fr md:gap-4 md:place-items-center">
             <ng-container *ngIf="blogs;">
                 <!-- content to render if expression is true -->
-                <div *ngFor="let blog of blogs" class="w-full">s
+                <div *ngFor="let blog of blogs" class="w-full">
                     <a routerLink="/blogs/{{ (blog.title).split(' ').join('-').toLowerCase() }}"> 
                         <img src={{blog.img}} alt={{blog.title}} class="w-full rounded-lg cursor-pointer"/>
                     </a>
