@@ -1,4 +1,4 @@
-<div class="container mx-auto p-6 flex flex-col min-h-screen">
+<div class="container mx-auto p-6 flex flex-col">
     <div class="flex flex-col items-center space-y-8">
         <div class="w-full">
             <app-search-bar (searchEvent)="onSearch($event)"></app-search-bar>
@@ -9,7 +9,7 @@
         <div class="flex flex-col items-center justify-center p-5 mx-auto md:grid md:grid-cols-2 md:fr md:gap-4 md:place-items-center">
             <ng-container *ngIf="blogs;">
                 <!-- content to render if expression is true -->
-                <div *ngFor="let blog of blogs" class="w-full">
+                <div *ngFor="let blog of blogs" class="w-full">s
                     <a routerLink="/blogs/{{ (blog.title).split(' ').join('-').toLowerCase() }}"> 
                         <img src={{blog.img}} alt={{blog.title}} class="w-full rounded-lg cursor-pointer"/>
                     </a>
@@ -28,7 +28,4 @@
             <h2 class="text-4xl text-red-600 mx-auto font-bold">The blog title you are searching for seems to be unavailable.</h2>
         </div>
     </div>
-    <div class="flex-1 mt-auto">
-        <app-footer></app-footer>
-      </div>
 </div>
