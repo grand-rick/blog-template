@@ -1,4 +1,4 @@
-<nav class="relative container mx-auto p-6">
+<nav class="container mx-auto p-6">
     <div class="flex items-center justify-between">
         <div class="w-auto h-10 bg-transparent">
             <img src="https://cdn.pixabay.com/photo/2016/01/27/05/45/art-1163780_960_720.png" class="cursor-pointer w-8" alt="Logo">
@@ -31,14 +31,29 @@
                 <a class="no-underline text-black py-3" routerLink="/">Pricing</a>
             </li>
         </ul>
-        <ul class="flex flex-col space-y-5 items-center justify-center list-none md:flex-row md:space-y-0">
+        <ul class="flex items-center justify-center list-none">
             <li class="mx-2.5">
                 <a class="no-underline text-black py-3" routerLink="/">Log in</a>
             </li>
             <li class="mx-2.5">
-                <a class="rounded-full bg-black text-white transition duration-300 no-underline text-black py-3 no-underline text-black text-2md px-5 py-3 ml-2.5 cursor-pointer border-none hover:bg-white hover:text-black hover:border-2" routerLink="/">Sign up</a>
+                <a class="rounded-full bg-black text-white transition duration-300 no-underline text-2md px-3 py2 md:px-5 md:py-3 ml-2.5 cursor-pointer border-none hover:bg-white hover:text-black hover:border-2" routerLink="/">Sign up</a>
             </li>
         </ul>
+        <!-- Hamburger Icon -->
+        <button id="menu-btn" class="block hamburger md:hidden focus:outline-none">
+            <span class="hamburger-top"></span><span class="hamburger-middle"></span><span class="hamburger-bottom"></span>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden">
+        <div id="menu" class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+            <a href="#">Home</a>
+            <a href="#">Resources</a>
+            <a href="#">Pricing</a>
+            <a class="no-underline text-black py-3" routerLink="/">Log in</a>
+            <a class="rounded-full bg-black text-white transition duration-300 no-underline text-2md px-3 py2 md:px-5 md:py-3 ml-2.5 cursor-pointer border-none hover:bg-white hover:text-black hover:border-2" routerLink="/">Sign up</a>
+        </div>
     </div>
 </nav>
   
