@@ -6,7 +6,7 @@
                 <input 
                 type="text" 
                 [(ngModel)]="searchTerm" 
-                (keyup)="search()" 
+                (input)="search()" 
                 class="p-1.5 border-solid border-b-1 focus:outline-none" 
                 placeholder="Search title..."
                 />
