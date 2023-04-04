@@ -2,36 +2,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-:root {
-    font-size: 62.5%;
-    --light-color: #d4e0ff;
-    --theme-color: #009e66;
-    --btn-hover-color: rgba(0, 158, 102, 0.5);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    position: relative;
-} */
-
-/* UTILITIES */
-/* .container {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-width: 95%;
-    margin: 0 2.5rem;
-    padding: 2rem;
-}
-  
-.container > * {
-    width: 100%; */
-/* END OF UTILITIES */
