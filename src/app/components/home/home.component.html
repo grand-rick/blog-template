@@ -1,9 +1,9 @@
 <main class="container mx-auto p-6">
     <div class="flex flex-col items-center space-y-8">
-        <div class="w-19/20 mx-auto">
+        <div class="w-full">
             <app-search-bar (searchEvent)="onSearch($event)"></app-search-bar>
         </div>
-        <div class="w-19/20 mx-auto">
+        <div class="w-full mx-auto">
             <app-button-group (category)="onCategorySelect($event)"></app-button-group>
         </div>
         <div class="flex flex-col items-center justify-center p-5 mx-auto md:grid md:grid-cols-2 md:fr md:gap-4 md:place-items-center">
