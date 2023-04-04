@@ -10,8 +10,8 @@ import { Blog } from 'src/app/models/Blog';
 export class HomeComponent implements OnInit{
   blogs: Blog[] = [];
   hasSearched: boolean = false;
-  selectedCategory: string = '';
   allCategoryKey: string = 'View All';
+  selectedCategory: string = this.allCategoryKey;
 
   constructor (private blogService: BlogService) {
     this.blogService.getBlogs().subscribe(data => {
