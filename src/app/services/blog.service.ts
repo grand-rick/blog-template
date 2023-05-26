@@ -17,6 +17,7 @@ export class BlogService {
     return this.http.get<Blog[]>(this.url).pipe(
       catchError(this.errorHandler)
   );
+  }
 
   errorHandler(error: HttpErrorResponse): Observable<never> {
     return throwError(error.message || 'Server Error');
