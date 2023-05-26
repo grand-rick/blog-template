@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Blog } from 'src/app/models/Blog';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/throw';
+import { catchError } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +15,10 @@ export class BlogService {
 
   getBlogs(): Observable<Blog[]> {
     return this.http.get<Blog[]>(this.url)
-                    .catch(this.errorHandler);
+                    .catchError(this.errorHandler);
   }
 
   errorHandler(error: HttpErrorResponse): Observable<> {
-    return Observable.throw(error.message || 'Server Error');
+    return Observable.throwError(error.message || 'Server Error');
   }
 }
