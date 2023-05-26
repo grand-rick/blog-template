@@ -12,11 +12,11 @@ export class HomeComponent implements OnInit{
   hasSearched: boolean = false;
   allCategoryKey: string = 'View All';
   selectedCategory: string = this.allCategoryKey;
+  errorMsg: string = '';
 
   constructor (private blogService: BlogService) {
-    this.blogService.getBlogs().subscribe(data => {
-      this.blogs = data;
-    });
+    this.blogService.getBlogs().subscribe(data => this.blogs = data,
+                                          error => this.errorMsg = error);
   }
 
   ngOnInit(): void {}
