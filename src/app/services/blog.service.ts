@@ -1,16 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Blog } from 'src/app/models/Blog';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
+  private url: string = 'assets/data.json'
 
   constructor(private http: HttpClient) { }
 
   getBlogs(): Observable<Blog[]> {
-    return this.http.get<Blog[]>('assets/data.json');
+    return this.http.get<Blog[]>(this.url).pipe(
+      catchError(this.errorHandler)
+  );
+  }
+
+  errorHandler(error: HttpErrorResponse): Observable<never> {
+    return throwError(error.message || 'Server Error');
   }
 }
