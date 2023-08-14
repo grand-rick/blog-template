@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from 'src/app/shared/data-access/services/blog.service';
+import { BlogService } from 'src/app/blogs/data-access/services/blog.service';
 import { Blog } from 'src/app/blogs/data-access/models/Blog';
 import { Observable, map } from 'rxjs';
 
