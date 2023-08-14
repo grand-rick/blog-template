@@ -14,12 +14,13 @@ export class BlogService {
   constructor(private http: HttpClient) { }
 
   getBlogs(): Observable<Blog[]> {
-    return this.http.get<Blog[]>(this.url).pipe(
+    return this.http.get<Blog[]>(this.url)
+    .pipe(
       catchError(this.errorHandler)
   );
   }
 
   errorHandler(error: HttpErrorResponse): Observable<never> {
-    return throwError(error.message || 'Server Error');
+    return throwError(() => new Error(error.message || 'Server Error'));
   }
 }

@@ -6,8 +6,8 @@
         <div class="w-full mx-auto">
             <app-button-group (category)="onCategorySelect($event)"></app-button-group>
         </div>
-        <div class="flex flex-col items-center justify-center p-5 mx-auto md:grid md:grid-cols-2 md:fr md:gap-4 md:place-items-center">
-            <h3>{{errorMsg}}</h3>
+        <div class="flex flex-col items-center justify-center p-5 mx-auto md:grid md:grid-cols-2 md:gap-3 md:place-items-center">
+            <h3 *ngIf="errorMsg">{{errorMsg}}</h3>
             <ng-container *ngIf="blogs;">
                 <!-- content to render if expression is true -->
                 <div *ngFor="let blog of blogs" class="w-full">
