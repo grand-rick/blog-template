@@ -1,0 +1,20 @@
+<div class="container mx-auto p-6 flex flex-col">
+    <div class="flex flex-col items-center space-y-8">
+        <div class="w-full">
+            <search-bar (searchEvent)="onSearch($event)"></search-bar>
+        </div>
+        <div class="w-full mx-auto">
+            <button-group (category)="onCategorySelect($event)"></button-group>
+        </div>
+        <div class="flex flex-col items-center justify-center p-5 mx-auto md:grid md:grid-cols-2 md:gap-3 md:place-items-center">
+            <h3 *ngIf="errorMsg">{{errorMsg}}</h3>
+            <ng-container *ngIf="blogs.length;">
+                <!-- content to render if expression is true -->
+                <blogs-list [blogs]="blogs"></blogs-list>
+            </ng-container>
+        </div>
+        <div *ngIf="!blogs.length;" class="flex items-center justify-center mx-auto p-1 uppercase">
+            <h2 class="text-4xl text-red-600 mx-auto font-bold break-all">The blog title you are searching for is currently unavailable.</h2>
+        </div>
+    </div>
+</div>

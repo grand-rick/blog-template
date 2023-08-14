@@ -4,12 +4,12 @@ import { BlogService } from 'src/app/services/blog.service';
 import { Blog } from 'src/app/models/Blog';
 
 @Component({
-  selector: 'app-blogs',
-  templateUrl: './blogs.component.html',
-  styleUrls: ['./blogs.component.css']
+  selector: 'blog-details',
+  templateUrl: './blog-details.component.html',
+  styleUrls: ['./blog-details.component.css']
 })
 
-export class BlogsComponent implements OnInit {
+export class BlogDetailsComponent implements OnInit {
   title: string = '';
   allBlogs: Blog[] = [];
   currentBlog: Blog;

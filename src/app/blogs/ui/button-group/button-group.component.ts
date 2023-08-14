@@ -3,7 +3,7 @@ import { BlogService } from 'src/app/services/blog.service';
 import { Blog } from 'src/app/models/Blog';
 
 @Component({
-  selector: 'app-button-group',
+  selector: 'button-group',
   templateUrl: './button-group.component.html',
   styleUrls: ['./button-group.component.css']
 })

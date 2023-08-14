@@ -4,24 +4,27 @@ import { Blog } from 'src/app/models/Blog';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './blogs.component.html',
+  styleUrls: ['./blogs.component.css']
 })
-export class HomeComponent implements OnInit{
+export class BlogsComponent implements OnInit{
   blogs: Blog[] = [];
   hasSearched: boolean = false;
   allCategoryKey: string = 'View All';
   selectedCategory: string = this.allCategoryKey;
   errorMsg: string = '';
 
-  constructor (private blogService: BlogService) {
-    this.blogService.getBlogs().subscribe(data => this.blogs = data,
-                                          error => this.errorMsg = error);
+  constructor (private blogService: BlogService) {}
+
+  ngOnInit(): void {
+    this.blogService.getBlogs().subscribe(data => 
+      {
+        this.blogs = data,
+        console.log(data)
+      });
   }
 
-  ngOnInit(): void {}
-
-  onSearch(searchTerm: string): void {
+  onSearch(searchTerm: any): void {
     /* Removing white space from the search term. */
     searchTerm = searchTerm.split(' ').filter(Boolean).join('');
 
@@ -41,7 +44,7 @@ export class HomeComponent implements OnInit{
       });
   }
 
-  onCategorySelect(category: string): void {
+  onCategorySelect(category: any): void {
     this.blogService.getBlogs().subscribe(data => {
       let blogs: Blog[] = data;
 
