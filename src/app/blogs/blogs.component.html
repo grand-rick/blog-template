@@ -7,10 +7,10 @@
             <button-group (category)="onCategorySelect($event)"></button-group>
         </div>
         <h3 *ngIf="errorMsg">{{errorMsg}}</h3>
-        <ng-container *ngIf="blogs$ | async as fetchedBlogs;">
+        <ng-container *ngIf="blogs.length;">
             <!-- content to render if expression is true -->
-            <blogs-list [blogs]="fetchedBlogs" class="flex flex-col items-center justify-center p-5 mx-auto md:grid md:grid-cols-2 md:gap-3 md:place-items-center"></blogs-list>
-            <div *ngIf="!fetchedBlogs.length;" class="flex items-center justify-center mx-auto p-1 uppercase">
+            <blogs-list [blogs]="blogs" class="flex flex-col items-center justify-center p-5 mx-auto md:grid md:grid-cols-2 md:gap-3 md:place-items-center"></blogs-list>
+            <div *ngIf="!blogs.length;" class="flex items-center justify-center mx-auto p-1 uppercase">
                 <h2 class="text-4xl text-red-600 mx-auto font-bold break-all">The blog title you are searching for is currently unavailable.</h2>
             </div>
         </ng-container>
