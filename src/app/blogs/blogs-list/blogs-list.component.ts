@@ -9,7 +9,5 @@ import { Blog } from 'src/app/models/Blog';
 export class BlogsListComponent {
   @Input() blogs: Blog[] = [];
 
-  ngOnInit(): void {
-    console.log(this.blogs);
-  }
+  ngOnInit(): void {}
 }
