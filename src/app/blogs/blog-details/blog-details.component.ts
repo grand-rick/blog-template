@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BlogService } from 'src/app/services/blog.service';
-import { Blog } from 'src/app/models/Blog';
+import { BlogService } from 'src/app/blogs/data-access/services/blog.service';
+import { Blog } from 'src/app/blogs/data-access/models/Blog';
 
 @Component({
-  selector: 'app-blogs',
-  templateUrl: './blogs.component.html',
-  styleUrls: ['./blogs.component.css']
+  selector: 'blog-details',
+  templateUrl: './blog-details.component.html',
+  styleUrls: ['./blog-details.component.css']
 })
 
-export class BlogsComponent implements OnInit {
+export class BlogDetailsComponent implements OnInit {
   title: string = '';
   allBlogs: Blog[] = [];
   currentBlog: Blog;

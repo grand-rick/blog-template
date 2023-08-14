@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { BlogService } from 'src/app/services/blog.service';
-import { Blog } from 'src/app/models/Blog';
+import { BlogService } from 'src/app/blogs/data-access/services/blog.service';
+import { Blog } from 'src/app/blogs/data-access/models/Blog';
 
 @Component({
-  selector: 'app-button-group',
+  selector: 'button-group',
   templateUrl: './button-group.component.html',
   styleUrls: ['./button-group.component.css']
 })
