@@ -4,7 +4,7 @@ import { Blog } from 'src/app/blogs/data-access/models/Blog';
 import { Observable, map } from 'rxjs';
 
 @Component({
-  selector: 'app-home',
+  selector: 'blogs',
   templateUrl: './blogs.component.html',
   styleUrls: ['./blogs.component.css']
 })
@@ -19,11 +19,16 @@ export class BlogsComponent implements OnInit{
 
   ngOnInit(): void {}
 
-  onSearch(searchTerm: any): void {
+  onSearch(searchTerm: string): void {
     /* Removing white space from the search term. */
-    searchTerm = searchTerm.split(' ').filter(Boolean).join('');
+    searchTerm = searchTerm.trim().toLowerCase();
 
-    this.blogs$.pipe(
+    if (!searchTerm) {
+      this.blogs$ = this.blogService.getBlogs();
+      this.hasSearched = false;
+    }
+
+    this.blogs$ = this.blogs$.pipe(
       map((data: Blog[]) => {
         let filteredBlogs: Blog[] = data;
         if (this.selectedCategory !== this.allCategoryKey) {
@@ -36,12 +41,12 @@ export class BlogsComponent implements OnInit{
         }
         return filteredBlogs;
       })
-        
-    )
+    );
   }
 
-  onCategorySelect(category: any): void {
-    this.blogs$.pipe(
+  onCategorySelect(category: string): void {
+    this.blogs$ = this.blogService.getBlogs();
+    this.blogs$ = this.blogs$.pipe(
       map((data: Blog[]) => {
         let blogs: Blog[] = data;
         if (category === this.allCategoryKey) {
