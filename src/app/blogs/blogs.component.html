@@ -10,10 +10,9 @@
         <ng-container *ngIf="blogs.length;">
             <!-- content to render if expression is true -->
             <blogs-list [blogs]="blogs" class="flex flex-col items-center justify-center p-5 mx-auto md:grid md:grid-cols-2 md:gap-3 md:place-items-center"></blogs-list>
-            <div *ngIf="!blogs.length;" class="flex items-center justify-center mx-auto p-1 uppercase">
-                <h2 class="text-4xl text-red-600 mx-auto font-bold break-all">The blog title you are searching for is currently unavailable.</h2>
-            </div>
         </ng-container>
-        
+        <div *ngIf="blogs.length === 0" class="flex items-center justify-center mx-auto p-1 uppercase">
+            <h2 class="text-4xl text-red-600 mx-auto font-bold break-all">The blog title you are searching for is currently unavailable.</h2>
+        </div>
     </div>
 </div>

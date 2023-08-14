@@ -29,6 +29,7 @@ export class BlogsComponent implements OnInit, OnDestroy {
     if (!searchTerm) {
       this.blogService.getBlogs().subscribe(data => this.blogs = data);
       this.hasSearched = false;
+      return;
     }
 
     this.hasSearched = true;
@@ -39,10 +40,8 @@ export class BlogsComponent implements OnInit, OnDestroy {
         filteredBlogs = filteredBlogs.filter(blog => blog.category === this.selectedCategory);
       }
 
-      if (searchTerm) {
-        const blogTitle: string = searchTerm.trim().toLowerCase();
-        filteredBlogs = filteredBlogs.filter(blog => blog.title.toLowerCase().includes(blogTitle));
-      }
+      const blogTitle: string = searchTerm.split(' ').join('').toLowerCase();
+      filteredBlogs = filteredBlogs.filter(blog => blog.title.toLowerCase().includes(blogTitle));
 
       this.blogs = filteredBlogs;
     });
@@ -53,7 +52,7 @@ export class BlogsComponent implements OnInit, OnDestroy {
       let categoryBlogs: Blog[] = data;
       if (category !== this.allCategoryKey) {
         this.selectedCategory = category;
-        categoryBlogs = data.filter(blog => blog.category === category);
+        categoryBlogs = categoryBlogs.filter(blog => blog.category === category);
       }
       this.blogs = categoryBlogs;
     });
