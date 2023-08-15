@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BlogService } from 'src/app/blogs/data-access/services/blog.service';
 import { Blog } from 'src/app/blogs/data-access/models/Blog';
-import { Observable, Subscription, map } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'blogs',
@@ -9,17 +9,23 @@ import { Observable, Subscription, map } from 'rxjs';
   styleUrls: ['./blogs.component.css']
 })
 export class BlogsComponent implements OnInit, OnDestroy {
+  constructor (private blogService: BlogService) {}
   private subscription!: Subscription;
+
+  blogs$: Observable<Blog[]> = this.blogService.getBlogs();
+  allBlogs: Blog[] = [];
   blogs: Blog[] = [];
   hasSearched: boolean = false;
   allCategoryKey: string = 'View All';
   selectedCategory: string = this.allCategoryKey;
   errorMsg: string = '';
 
-  constructor (private blogService: BlogService) {}
 
   ngOnInit(): void {
-    this.subscription = this.blogService.getBlogs().subscribe(data => this.blogs = data);
+    this.subscription = this.blogs$.subscribe(data => {
+      this.allBlogs = data;
+      this.blogs = data;
+    });
   }
 
   onSearch(searchTerm: string): void {
@@ -27,38 +33,35 @@ export class BlogsComponent implements OnInit, OnDestroy {
     searchTerm = searchTerm.trim().toLowerCase();
 
     if (!searchTerm) {
-      this.blogService.getBlogs().subscribe(data => this.blogs = data);
+      this.blogs = this.allBlogs;
       this.hasSearched = false;
       return;
     }
 
     this.hasSearched = true;
-    this.blogService.getBlogs().subscribe(data => {
-      let filteredBlogs = data;
 
-      if (this.selectedCategory !== this.allCategoryKey) {
-        filteredBlogs = filteredBlogs.filter(blog => blog.category === this.selectedCategory);
-      }
+    let filteredBlogs = this.allBlogs;
 
-      const blogTitle: string = searchTerm.split(' ').join('').toLowerCase();
-      filteredBlogs = filteredBlogs.filter(blog => blog.title.toLowerCase().includes(blogTitle));
+    if (this.selectedCategory !== this.allCategoryKey) {
+      filteredBlogs = filteredBlogs.filter(blog => blog.category === this.selectedCategory);
+    }
 
-      this.blogs = filteredBlogs;
-    });
+    const blogTitle: string = searchTerm.split(' ').join('').toLowerCase();
+    filteredBlogs = filteredBlogs.filter(blog => blog.title.toLowerCase().includes(blogTitle));
+
+    this.blogs = filteredBlogs;
   }
 
   onCategorySelect(category: string): void {
-    this.blogService.getBlogs().subscribe(data => {
-      let categoryBlogs: Blog[] = data;
-      if (category !== this.allCategoryKey) {
-        this.selectedCategory = category;
-        categoryBlogs = categoryBlogs.filter(blog => blog.category === category);
-      }
-      this.blogs = categoryBlogs;
-    });
+    let categoryBlogs: Blog[] = this.allBlogs;
+    if (category !== this.allCategoryKey) {
+      this.selectedCategory = category;
+      categoryBlogs = categoryBlogs.filter(blog => blog.category === category);
+    }
+    this.blogs = categoryBlogs;
   }
 
-  ngOnDestroy(): void {
+  ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 }
