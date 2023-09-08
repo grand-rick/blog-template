@@ -7,26 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
   clicked: Boolean = false;
-  
-  menuBtnToggleClasses = {
-    open: !this.clicked
-  }
-
-  menuToggleClasses = {
-    flex: !this.clicked,
-    hidden: !this.clicked
-  }
 
   constructor() {}
 
   ngOnInit(): void {
-    // let btn: HTMLElement = this.elementRef.nativeElement.querySelector('#menu-btn');
-    // let nav: HTMLElement = this.elementRef.nativeElement.querySelector('#menu');
+    const btn = document.querySelector('#menu-btn');
+    const nav = document.querySelector('#menu');
 
-    // btn.addEventListener('click', () => {
-    //   btn.classList.toggle('open');
-    //   nav.classList.toggle('flex');
-    //   nav.classList.toggle('hidden');
-    // });
+    btn?.addEventListener('click', () => {
+      btn.classList.toggle('open');
+      nav?.classList.toggle('flex');
+      nav?.classList.toggle('hidden');
+    });
   }
 }
